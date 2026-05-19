@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DigiSlip — Digital Flyer</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:  #060E22;
+  --blue:  #1A6EFF;
+  --blue2: #3B8BFF;
+  --sky:   #38C5FF;
+  --white: #FFFFFF;
+}
+
+body {
+  background: #07101F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: Cambria, Georgia, serif;
+}
+
+.flyer {
+  width: 560px;
+  background: var(--navy);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(56,197,255,0.2);
+  box-shadow: 0 60px 120px rgba(0,0,0,0.85), 0 0 80px rgba(26,110,255,0.14);
+}
+
+/* subtle background glow — no animation */
+.flyer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 420px 320px at 85% 8%, rgba(56,197,255,0.09) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 5% 92%, rgba(26,110,255,0.09) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image:
+    linear-gradient(rgba(56,197,255,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,197,255,1) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 44px 44px 38px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- TOP BAR ---- */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 38px;
+}
+.logo-mark { display: flex; align-items: center; gap: 9px; }
+.logo-icon {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: linear-gradient(135deg, var(--blue), var(--sky));
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-icon svg { width: 19px; height: 19px; }
+.logo-text {
+  font-family: Cambria, Georgia, serif;
+  font-size: 20px; font-weight: 700; color: var(--white);
+}
+.logo-text span { color: var(--sky); }
+.badge-live {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(56,197,255,0.1);
+  border: 1px solid rgba(56,197,255,0.28);
+  border-radius: 20px; padding: 5px 13px;
+  font-family: Cambria, Georgia, serif;
+  font-size: 10.5px; font-weight: 700;
+  color: var(--sky); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.badge-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--sky);
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.15} }
+
+/* ---- EYEBROW ---- */
+.eyebrow {
+  font-family: Cambria, Georgia, serif;
+  font-size: 11px; font-weight: 400;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--sky); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.eyebrow::before {
+  content: ''; display: block;
+  width: 28px; height: 1.5px; background: var(--sky); border-radius: 2px;
+}
+
+/* ---- HEADLINE — static, no animation ---- */
+.headline {
+  font-family: Cambria, Georgia, serif;
+  font-size: 46px; font-weight: 700; color: var(--white);
+  line-height: 1.1; letter-spacing: -0.5px;
+  hyphens: none; word-break: normal;
+  margin-bottom: 22px;
+}
+.headline .blue-line { color: var(--sky); display: block; }
+
+/* ---- DIVIDER ---- */
+.divider {
+  width: 52px; height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--sky));
+  border-radius: 2px; margin-bottom: 22px;
+}
+
+/* ---- DESCRIPTION ---- */
+.description {
+  font-family: Cambria, Georgia, serif;
+  font-size: 14.5px; color: var(--white);
+  line-height: 1.8; margin-bottom: 30px;
+  max-width: 390px; hyphens: none; word-break: normal;
+  opacity: 0.82;
+}
+.description strong { color: var(--white); font-weight: 700; opacity: 1; }
+
+/* ---- BENEFITS ---- */
+.benefits-label {
+  font-family: Cambria, Georgia, serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--white); opacity: 0.5; margin-bottom: 12px;
+}
+.benefits { display: flex; flex-direction: column; gap: 9px; margin-bottom: 34px; }
+.benefit {
+  display: flex; align-items: flex-start; gap: 13px;
+  padding: 12px 15px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(56,197,255,0.18);
+  border-radius: 10px;
+}
+.benefit-num {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(56,197,255,0.15);
+  border: 1px solid rgba(56,197,255,0.35);
+  display: flex; align-items: center; justify-content: center;
+  font-family: Cambria, Georgia, serif;
+  font-size: 11px; font-weight: 700; color: var(--sky);
+  flex-shrink: 0; margin-top: 1px;
+}
+.benefit-text h4 {
+  font-family: Cambria, Georgia, serif;
+  font-size: 13.5px; font-weight: 700;
+  color: var(--white); margin-bottom: 3px; hyphens: none;
+}
+.benefit-text p {
+  font-family: Cambria, Georgia, serif;
+  font-size: 12px; color: var(--white);
+  opacity: 0.7; line-height: 1.6; hyphens: none;
+}
+
+/* ---- BOTTOM ROW ---- */
+.bottom-row {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; gap: 20px;
+}
+.stats-col { display: flex; flex-direction: column; gap: 13px; }
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.stat-val {
+  font-family: Cambria, Georgia, serif;
+  font-size: 26px; font-weight: 700; color: var(--white); line-height: 1;
+}
+.stat-val span { color: var(--sky); }
+.stat-lbl {
+  font-family: Cambria, Georgia, serif;
+  font-size: 10px; font-weight: 400;
+  color: var(--white); opacity: 0.75;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.stat-sep { width: 26px; height: 1px; background: rgba(255,255,255,0.15); }
+.credit-line {
+  font-family: Cambria, Georgia, serif;
+  font-size: 10.5px; color: var(--white);
+  opacity: 0.7; margin-top: 4px; hyphens: none;
+}
+
+/* ---- QR BLOCK ---- */
+.qr-block { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.qr-wrapper {
+  position: relative;
+  width: 144px; height: 144px;
+  background: var(--white); border-radius: 14px; padding: 10px;
+  box-shadow: 0 0 0 2px rgba(56,197,255,0.5), 0 0 32px rgba(56,197,255,0.25);
+}
+.qr-wrapper a { display: block; width: 124px; height: 124px; }
+.qr-wrapper img { display: block; width: 124px; height: 124px; border-radius: 4px; }
+.qr-corner {
+  position: absolute; width: 17px; height: 17px;
+  border-color: var(--sky); border-style: solid; border-width: 0;
+}
+.qr-corner.tl{top:-3px;left:-3px;border-top-width:2.5px;border-left-width:2.5px;border-radius:3px 0 0 0}
+.qr-corner.tr{top:-3px;right:-3px;border-top-width:2.5px;border-right-width:2.5px;border-radius:0 3px 0 0}
+.qr-corner.bl{bottom:-3px;left:-3px;border-bottom-width:2.5px;border-left-width:2.5px;border-radius:0 0 0 3px}
+.qr-corner.br{bottom:-3px;right:-3px;border-bottom-width:2.5px;border-right-width:2.5px;border-radius:0 0 3px 0}
+
+.scan-label { text-align: center; }
+.scan-label p {
+  font-family: Cambria, Georgia, serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--sky);
+}
+.scan-label small {
+  font-family: Cambria, Georgia, serif;
+  font-size: 10px; color: var(--white);
+  opacity: 0.6; display: block; margin-top: 2px;
+}
+
+/* ---- BOTTOM STRIP ---- */
+.bottom-strip {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--blue), var(--sky), var(--blue), transparent);
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+<div class="flyer">
+  <div class="grid-bg"></div>
+
+  <div class="content">
+
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div class="logo-mark">
+        <div class="logo-icon">
+          <svg viewBox="0 0 19 19" fill="none">
+            <rect x="2" y="2" width="6.5" height="6.5" rx="1.5" fill="white"/>
+            <rect x="10.5" y="2" width="6.5" height="6.5" rx="1.5" fill="white" opacity="0.5"/>
+            <rect x="2" y="10.5" width="6.5" height="6.5" rx="1.5" fill="white" opacity="0.5"/>
+            <rect x="10.5" y="10.5" width="6.5" height="6.5" rx="1.5" fill="white"/>
+          </svg>
+        </div>
+        <span class="logo-text">Digi<span>Slip</span></span>
+      </div>
+      <div class="badge-live">
+        <div class="badge-dot"></div>
+        Pakistan First
+      </div>
+    </div>
+
+    <!-- Eyebrow -->
+    <div class="eyebrow">WhatsApp Receipt Platform</div>
+
+    <!-- Static headline -->
+    <h1 class="headline">
+      Receipts That<br>
+      <span class="blue-line">Go Paperless.</span>
+    </h1>
+
+    <div class="divider"></div>
+
+    <!-- Description -->
+    <p class="description">
+      <strong>DigiSlip replaces paper receipts with instant WhatsApp delivery</strong> — plugging directly into your existing POS with zero hardware changes and no app required.
+      Pakistan's first digital receipt infrastructure bridges merchants, customers and FBR compliance in under 2 seconds per transaction.
+    </p>
+
+    <!-- Benefits -->
+    <div class="benefits-label">Key Benefits</div>
+    <div class="benefits">
+      <div class="benefit">
+        <div class="benefit-num">1</div>
+        <div class="benefit-text">
+          <h4>Zero Friction Setup</h4>
+          <p>Software only install. No hardware replacement, no app download for customers. Just plug in and go live.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-num">2</div>
+        <div class="benefit-text">
+          <h4>Built in Loyalty and Analytics</h4>
+          <p>Every receipt auto credits loyalty points and feeds a real time merchant dashboard with customer insights.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-num">3</div>
+        <div class="benefit-text">
+          <h4>FBR Ready and Cost Saving</h4>
+          <p>Fully FBR compliant at PKR 2,500 per month — less than what you spend on thermal paper rolls today.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom row -->
+    <div class="bottom-row">
+      <div class="stats-col">
+        <div class="stat">
+          <div class="stat-val">4.2<span>M</span></div>
+          <div class="stat-lbl">Businesses in Pakistan</div>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <div class="stat-val"><span>$</span>180<span>M+</span></div>
+          <div class="stat-lbl">Market Opportunity</div>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <div class="stat-val"><span>&lt;</span>2<span>s</span></div>
+          <div class="stat-lbl">Receipt Delivery Time</div>
+        </div>
+        <div class="credit-line">SZABIST Karachi &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Humaira Bibi</div>
+      </div>
+
+      <div class="qr-block">
+        <div class="qr-wrapper">
+          <div class="qr-corner tl"></div>
+          <div class="qr-corner tr"></div>
+          <div class="qr-corner bl"></div>
+          <div class="qr-corner br"></div>
+          <a href="https://humaira123-afk.github.io/digislip/" target="_blank" rel="noopener">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=248x248&data=https%3A%2F%2Fhumaira123-afk.github.io%2Fdigislip%2F&margin=0&color=060E22&bgcolor=FFFFFF&ecc=H"
+              alt="Scan QR to open DigiSlip website"
+              width="124" height="124"
+            />
+          </a>
+        </div>
+        <div class="scan-label">
+          <p>Scan to Experience</p>
+          <small>humaira123-afk.github.io/digislip</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-strip"></div>
+</div>
+
+</body>
+</html>
