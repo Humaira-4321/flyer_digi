@@ -9,194 +9,250 @@
 html, body {
   width: 100%;
   min-height: 100vh;
-  background: #e8f0f7;
+  background: #e8f7fc;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
-.flyer {
-  width: 560px;
-  background: #f7fcff;
-  border-radius: 20px;
-  border: 1px solid rgba(56,197,255,0.25);
+.ds-card {
+  width: 540px;
+  background: #FFFFFF;
+  border-radius: 16px;
   overflow: hidden;
-  position: relative;
+  border: 0.5px solid #A6F0FF;
 }
-.content { padding: 36px 36px 32px; display: flex; flex-direction: column; }
-.top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
-.logo-mark { display: flex; align-items: center; gap: 10px; }
-.logo-icon {
-  width: 36px; height: 36px; border-radius: 9px;
-  background: #f0f7ff;
-  border: 1px solid rgba(26,110,255,0.2);
+.ds-header {
+  background: #2E90B8;
+  padding: 22px 28px 20px;
+}
+.ds-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.ds-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.ds-logo-icon {
+  width: 34px; height: 34px;
+  border-radius: 9px;
+  background: rgba(166,240,255,0.18);
+  border: 0.5px solid rgba(166,240,255,0.4);
   display: flex; align-items: center; justify-content: center;
 }
-.logo-text { font-size: 18px; font-weight: 700; color: #0d2d4a; letter-spacing: -0.2px; }
-.logo-text span { color: #1A6EFF; }
-.badge-live {
-  display: flex; align-items: center; gap: 6px;
-  background: rgba(56,197,255,0.1);
-  border: 1px solid rgba(56,197,255,0.3);
-  border-radius: 20px; padding: 4px 11px;
-  font-size: 10px; font-weight: 600; color: #1A6EFF;
-  letter-spacing: 0.07em; text-transform: uppercase;
+.ds-logo-name {
+  font-size: 17px;
+  font-weight: 500;
+  color: #FFFFFF;
+  letter-spacing: -0.2px;
 }
-.badge-dot { width: 5px; height: 5px; border-radius: 50%; background: #38C5FF; animation: blink 2s infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-.eyebrow {
-  font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
-  text-transform: uppercase; color: #4a7a9b;
-  margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+.ds-logo-name b { color: #A6F0FF; font-weight: 500; }
+.ds-pill {
+  display: flex; align-items: center; gap: 5px;
+  background: rgba(166,240,255,0.15);
+  border: 0.5px solid rgba(166,240,255,0.4);
+  border-radius: 20px; padding: 4px 10px;
+  font-size: 10px; font-weight: 500;
+  color: #A6F0FF; letter-spacing: 0.07em; text-transform: uppercase;
 }
-.eyebrow::before { content: ''; display: block; width: 22px; height: 1px; background: #38C5FF; }
-.headline { font-size: 40px; font-weight: 700; color: #0d2d4a; line-height: 1.1; margin-bottom: 16px; }
-.headline .blue-line { color: #1A6EFF; display: block; }
-.divider { width: 40px; height: 2px; background: #1A6EFF; border-radius: 2px; margin-bottom: 18px; opacity: 0.5; }
-.description { font-size: 13px; color: #4a7a9b; line-height: 1.8; margin-bottom: 24px; }
-.description strong { color: #0d2d4a; font-weight: 700; }
-.benefits-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #9ab4c8; margin-bottom: 10px; }
-.benefits { display: flex; flex-direction: column; gap: 7px; margin-bottom: 28px; }
-.benefit {
-  display: flex; align-items: flex-start; gap: 12px;
-  padding: 11px 14px;
-  background: #ffffff;
-  border: 1px solid #e8f4fb;
+.ds-pill-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%; background: #A6F0FF;
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+.ds-eyebrow {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: #A6F0FF; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 8px;
+  opacity: .85;
+}
+.ds-eyebrow::before {
+  content: ''; display: block;
+  width: 20px; height: 1px; background: #6DD6F5;
+}
+.ds-headline {
+  font-size: 34px; font-weight: 500;
+  color: #FFFFFF; line-height: 1.12; margin-bottom: 6px;
+}
+.ds-headline span { color: #A6F0FF; }
+.ds-body { padding: 24px 28px 22px; background: #FFFFFF; }
+.ds-divider {
+  width: 36px; height: 2px;
+  background: #2E90B8; border-radius: 2px;
+  margin-bottom: 16px; opacity: .5;
+}
+.ds-desc {
+  font-size: 13px; color: #2E6E8A;
+  line-height: 1.8; margin-bottom: 20px;
+}
+.ds-desc strong { color: #1a4d64; font-weight: 500; }
+.ds-benefits-lbl {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: #6DD6F5; margin-bottom: 8px;
+}
+.ds-benefits { display: flex; flex-direction: column; gap: 6px; margin-bottom: 22px; }
+.ds-benefit {
+  display: flex; align-items: flex-start; gap: 11px;
+  padding: 10px 13px;
+  background: #f4fdff;
+  border: 0.5px solid #A6F0FF;
   border-radius: 10px;
 }
-.benefit-num {
-  width: 21px; height: 21px; border-radius: 50%;
-  background: #eef6ff;
-  border: 1px solid rgba(26,110,255,0.2);
+.ds-bnum {
+  width: 20px; height: 20px;
+  border-radius: 50%; background: #2E90B8;
   display: flex; align-items: center; justify-content: center;
-  font-size: 10px; font-weight: 700; color: #1A6EFF;
+  font-size: 10px; font-weight: 500; color: #FFFFFF;
   flex-shrink: 0; margin-top: 1px;
 }
-.benefit-text h4 { font-size: 13px; font-weight: 700; color: #0d2d4a; margin-bottom: 2px; }
-.benefit-text p { font-size: 12px; color: #4a7a9b; line-height: 1.55; }
-.bottom-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
-.stats-col { display: flex; flex-direction: column; gap: 10px; }
-.stat { display: flex; flex-direction: column; gap: 1px; }
-.stat-val { font-size: 26px; font-weight: 700; color: #0d2d4a; line-height: 1; }
-.stat-val span { color: #1A6EFF; }
-.stat-lbl { font-size: 9px; color: #9ab4c8; letter-spacing: 0.08em; text-transform: uppercase; }
-.stat-sep { width: 20px; height: 1px; background: #daedf7; }
-.credit-line { font-size: 9.5px; color: #9ab4c8; margin-top: 6px; }
-.qr-block { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.qr-wrapper {
-  width: 134px; height: 134px;
-  background: #ffffff;
-  border-radius: 10px; padding: 7px;
-  border: 1px solid #e0eaf2;
+.ds-btext h4 { font-size: 13px; font-weight: 500; color: #1a4d64; margin: 0 0 2px; }
+.ds-btext p { font-size: 12px; color: #2E6E8A; line-height: 1.55; margin: 0; }
+.ds-bottom {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; gap: 20px;
+}
+.ds-stats { display: flex; flex-direction: column; gap: 10px; }
+.ds-stat { display: flex; flex-direction: column; gap: 1px; }
+.ds-stat-val { font-size: 24px; font-weight: 500; color: #1a4d64; line-height: 1; }
+.ds-stat-val span { color: #2E90B8; }
+.ds-stat-lbl { font-size: 10px; color: #6DD6F5; letter-spacing: 0.07em; text-transform: uppercase; }
+.ds-sep { width: 18px; height: 0.5px; background: #A6F0FF; }
+.ds-credit { font-size: 10px; color: #2E90B8; margin-top: 8px; line-height: 1.6; opacity: .75; }
+.ds-qr-block { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+.ds-qr-wrap {
+  width: 120px; height: 120px;
+  background: #FFFFFF; border-radius: 10px; padding: 6px;
+  border: 0.5px solid #A6F0FF;
   display: flex; align-items: center; justify-content: center;
 }
-.qr-wrapper canvas { display: block; border-radius: 3px; }
-.scan-label { text-align: center; }
-.scan-label p { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #1A6EFF; }
-.scan-label small { font-size: 9px; color: #9ab4c8; display: block; margin-top: 2px; }
-.bottom-strip { height: 3px; background: linear-gradient(90deg, transparent, #1A6EFF 30%, #38C5FF 60%, #1A6EFF, transparent); opacity: 0.4; }
+.ds-qr-wrap canvas { display: block; border-radius: 3px; }
+.ds-scan-lbl { text-align: center; }
+.ds-scan-lbl p { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #2E90B8; margin: 0; }
+.ds-scan-lbl small { font-size: 9px; color: #6DD6F5; display: block; margin-top: 2px; }
+.ds-strip {
+  height: 3px;
+  background: linear-gradient(90deg, #A6F0FF, #6DD6F5 40%, #2E90B8 70%, #A6F0FF);
+  opacity: .7;
+}
 </style>
 </head>
 <body>
-<div class="flyer">
-  <div class="content">
-    <div class="top-bar">
-      <div class="logo-mark">
-        <div class="logo-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M12 3L3 8l9 5 9-5-9-5z" fill="#1A6EFF"/>
-            <path d="M3 13l9 5 9-5" stroke="#1A6EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.6"/>
-            <path d="M3 18l9 5 9-5" stroke="#38C5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.4"/>
+<div class="ds-card">
+  <div class="ds-header">
+    <div class="ds-topbar">
+      <div class="ds-logo">
+        <div class="ds-logo-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3L3 8l9 5 9-5-9-5z" fill="#A6F0FF"/>
+            <path d="M3 13l9 5 9-5" stroke="#A6F0FF" stroke-width="2" stroke-linecap="round" fill="none" opacity=".7"/>
+            <path d="M3 18l9 5 9-5" stroke="#6DD6F5" stroke-width="2" stroke-linecap="round" fill="none" opacity=".5"/>
           </svg>
         </div>
-        <span class="logo-text">Digi<span>Slip</span></span>
+        <span class="ds-logo-name">Digi<b>Slip</b></span>
+      </div>
+      <div class="ds-pill">
+        <span class="ds-pill-dot"></span>Live
       </div>
     </div>
-    <div class="eyebrow">WhatsApp Receipt Platform</div>
-    <h1 class="headline">Receipts That<br><span class="blue-line">Go Paperless.</span></h1>
-    <div class="divider"></div>
-    <p class="description">
-      <strong>DigiSlip replaces paper receipts with instant WhatsApp delivery</strong> plugging directly into your existing POS with zero hardware changes and no app required. Pakistan's first digital receipt infrastructure bridges merchants, customers and FBR compliance in under 2 seconds.
+    <div class="ds-eyebrow">WhatsApp Receipt Platform</div>
+    <h1 class="ds-headline">Receipts That<br><span>Go Paperless.</span></h1>
+  </div>
+
+  <div class="ds-body">
+    <div class="ds-divider"></div>
+    <p class="ds-desc">
+      <strong>DigiSlip replaces paper receipts with instant WhatsApp delivery</strong> — plugging directly into your existing POS with zero hardware changes and no app required. Pakistan's first digital receipt infrastructure bridges merchants, customers, and FBR compliance in under 2 seconds.
     </p>
-    <div class="benefits-label">Key Benefits</div>
-    <div class="benefits">
-      <div class="benefit">
-        <div class="benefit-num">1</div>
-        <div class="benefit-text">
-          <h4>Zero Friction Setup</h4>
-          <p>Software only install. No hardware replacement, no app download for customers.</p>
+
+    <div class="ds-benefits-lbl">Key Benefits</div>
+    <div class="ds-benefits">
+      <div class="ds-benefit">
+        <div class="ds-bnum">1</div>
+        <div class="ds-btext">
+          <h4>Zero friction setup</h4>
+          <p>Software-only install. No hardware replacement, no app download for customers.</p>
         </div>
       </div>
-      <div class="benefit">
-        <div class="benefit-num">2</div>
-        <div class="benefit-text">
-          <h4>Built-in Loyalty and Analytics</h4>
+      <div class="ds-benefit">
+        <div class="ds-bnum">2</div>
+        <div class="ds-btext">
+          <h4>Built-in loyalty and analytics</h4>
           <p>Every receipt auto-credits loyalty points and feeds a real-time merchant dashboard.</p>
         </div>
       </div>
-      <div class="benefit">
-        <div class="benefit-num">3</div>
-        <div class="benefit-text">
-          <h4>FBR Ready and Cost Saving</h4>
-          <p>Fully FBR compliant at PKR 2,500/month less than thermal paper rolls today.</p>
+      <div class="ds-benefit">
+        <div class="ds-bnum">3</div>
+        <div class="ds-btext">
+          <h4>FBR ready and cost saving</h4>
+          <p>Fully FBR compliant at PKR 2,500/month — less than thermal paper rolls today.</p>
         </div>
       </div>
     </div>
-    <div class="bottom-row">
-      <div class="stats-col">
-        <div class="stat">
-          <div class="stat-val">4.2<span>M</span></div>
-          <div class="stat-lbl">Businesses in Pakistan</div>
+
+    <div class="ds-bottom">
+      <div class="ds-stats">
+        <div class="ds-stat">
+          <div class="ds-stat-val">4.2<span>M</span></div>
+          <div class="ds-stat-lbl">Businesses in Pakistan</div>
         </div>
-        <div class="stat-sep"></div>
-        <div class="stat">
-          <div class="stat-val"><span>$</span>180<span>M+</span></div>
-          <div class="stat-lbl">Market Opportunity</div>
+        <div class="ds-sep"></div>
+        <div class="ds-stat">
+          <div class="ds-stat-val"><span>$</span>180<span>M+</span></div>
+          <div class="ds-stat-lbl">Market Opportunity</div>
         </div>
-        <div class="stat-sep"></div>
-        <div class="stat">
-          <div class="stat-val"><span>&lt;</span>2<span>s</span></div>
-          <div class="stat-lbl">Receipt Delivery Time</div>
+        <div class="ds-sep"></div>
+        <div class="ds-stat">
+          <div class="ds-stat-val"><span>&lt;</span>2<span>s</span></div>
+          <div class="ds-stat-lbl">Receipt Delivery Time</div>
         </div>
-        <div class="credit-line">SZABIST Karachi &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Humaira Bibi</div>
+        <div class="ds-credit">SZABIST Karachi &nbsp;·&nbsp; May 2026<br>Humaira Bibi</div>
       </div>
-      <div class="qr-block">
-        <div class="qr-wrapper">
-          <canvas id="qrCanvas" width="120" height="120"></canvas>
+
+      <div class="ds-qr-block">
+        <div class="ds-qr-wrap">
+          <canvas id="qrCanvas" width="108" height="108"></canvas>
         </div>
-        <div class="scan-label">
-          <p>Scan to Experience</p>
+        <div class="ds-scan-lbl">
+          <p>Scan to experience</p>
           <small>digislipdemo-production.up.railway.app</small>
         </div>
       </div>
     </div>
   </div>
-  <div class="bottom-strip"></div>
+  <div class="ds-strip"></div>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-(function() {
+(function(){
   var tmp = document.createElement('div');
   document.body.appendChild(tmp);
   new QRCode(tmp, {
     text: 'https://digislipdemo-production.up.railway.app/',
-    width: 120, height: 120,
-    colorDark: '#000000',
+    width: 108, height: 108,
+    colorDark: '#1a4d64',
     colorLight: '#ffffff',
     correctLevel: QRCode.CorrectLevel.H
   });
-  setTimeout(function() {
+  setTimeout(function(){
     var img = tmp.querySelector('img');
     var canvas = document.getElementById('qrCanvas');
-    if (img && canvas) {
+    if(img && canvas){
       var ctx = canvas.getContext('2d');
       var i = new Image();
-      i.onload = function() { ctx.drawImage(i, 0, 0, 120, 120); };
+      i.onload = function(){ ctx.drawImage(i, 0, 0, 108, 108); };
       i.src = img.src;
     }
     document.body.removeChild(tmp);
-  }, 400);
+  }, 500);
 })();
 </script>
 </body>
