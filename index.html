@@ -25,8 +25,6 @@ html, body {
   position: relative;
 }
 .content { padding: 36px 36px 32px; display: flex; flex-direction: column; }
-
-/* TOP BAR */
 .top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
 .logo-mark { display: flex; align-items: center; gap: 10px; }
 .logo-icon {
@@ -47,25 +45,17 @@ html, body {
 }
 .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: #38C5FF; animation: blink 2s infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-
-/* EYEBROW */
 .eyebrow {
   font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
   text-transform: uppercase; color: #4a7a9b;
   margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
 }
 .eyebrow::before { content: ''; display: block; width: 22px; height: 1px; background: #38C5FF; }
-
-/* HEADLINE */
 .headline { font-size: 40px; font-weight: 700; color: #0d2d4a; line-height: 1.1; margin-bottom: 16px; }
 .headline .blue-line { color: #1A6EFF; display: block; }
 .divider { width: 40px; height: 2px; background: #1A6EFF; border-radius: 2px; margin-bottom: 18px; opacity: 0.5; }
-
-/* DESCRIPTION */
 .description { font-size: 13px; color: #4a7a9b; line-height: 1.8; margin-bottom: 24px; }
 .description strong { color: #0d2d4a; font-weight: 700; }
-
-/* BENEFITS */
 .benefits-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #9ab4c8; margin-bottom: 10px; }
 .benefits { display: flex; flex-direction: column; gap: 7px; margin-bottom: 28px; }
 .benefit {
@@ -85,8 +75,6 @@ html, body {
 }
 .benefit-text h4 { font-size: 13px; font-weight: 700; color: #0d2d4a; margin-bottom: 2px; }
 .benefit-text p { font-size: 12px; color: #4a7a9b; line-height: 1.55; }
-
-/* BOTTOM ROW */
 .bottom-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
 .stats-col { display: flex; flex-direction: column; gap: 10px; }
 .stat { display: flex; flex-direction: column; gap: 1px; }
@@ -95,8 +83,6 @@ html, body {
 .stat-lbl { font-size: 9px; color: #9ab4c8; letter-spacing: 0.08em; text-transform: uppercase; }
 .stat-sep { width: 20px; height: 1px; background: #daedf7; }
 .credit-line { font-size: 9.5px; color: #9ab4c8; margin-top: 6px; }
-
-/* QR */
 .qr-block { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .qr-wrapper {
   width: 134px; height: 134px;
@@ -109,20 +95,16 @@ html, body {
 .scan-label { text-align: center; }
 .scan-label p { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #1A6EFF; }
 .scan-label small { font-size: 9px; color: #9ab4c8; display: block; margin-top: 2px; }
-
-/* STRIP */
 .bottom-strip { height: 3px; background: linear-gradient(90deg, transparent, #1A6EFF 30%, #38C5FF 60%, #1A6EFF, transparent); opacity: 0.4; }
 </style>
 </head>
 <body>
 <div class="flyer">
   <div class="content">
-
     <div class="top-bar">
       <div class="logo-mark">
         <div class="logo-icon">
-          <!-- Clean DigiSlip layers icon in brand blue -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
             <path d="M12 3L3 8l9 5 9-5-9-5z" fill="#1A6EFF"/>
             <path d="M3 13l9 5 9-5" stroke="#1A6EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.6"/>
             <path d="M3 18l9 5 9-5" stroke="#38C5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.4"/>
@@ -132,15 +114,12 @@ html, body {
       </div>
       <div class="badge-live"><div class="badge-dot"></div>Pakistan First</div>
     </div>
-
     <div class="eyebrow">WhatsApp Receipt Platform</div>
     <h1 class="headline">Receipts That<br><span class="blue-line">Go Paperless.</span></h1>
     <div class="divider"></div>
-
     <p class="description">
       <strong>DigiSlip replaces paper receipts with instant WhatsApp delivery</strong> — plugging directly into your existing POS with zero hardware changes and no app required. Pakistan's first digital receipt infrastructure bridges merchants, customers and FBR compliance in under 2 seconds.
     </p>
-
     <div class="benefits-label">Key Benefits</div>
     <div class="benefits">
       <div class="benefit">
@@ -165,7 +144,6 @@ html, body {
         </div>
       </div>
     </div>
-
     <div class="bottom-row">
       <div class="stats-col">
         <div class="stat">
@@ -184,7 +162,6 @@ html, body {
         </div>
         <div class="credit-line">SZABIST Karachi &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Humaira Bibi</div>
       </div>
-
       <div class="qr-block">
         <div class="qr-wrapper">
           <canvas id="qrCanvas" width="120" height="120"></canvas>
@@ -195,11 +172,9 @@ html, body {
         </div>
       </div>
     </div>
-
   </div>
   <div class="bottom-strip"></div>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 (function() {
