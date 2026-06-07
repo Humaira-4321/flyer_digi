@@ -3,240 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DigiSlip – Receipts That Go Paperless</title>
+<title>DigiSlip Flyer — Front & Back</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html, body {
-    min-height: 100%;
-  }
-
   body {
     font-family: 'Inter', sans-serif;
-    background: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 24px 16px;
-  }
-
-  .card {
-    background: linear-gradient(160deg, #0d2247 0%, #091830 100%);
-    border-radius: 20px;
-    width: 360px;
-    padding: 28px 24px 24px;
-    color: white;
-    border: 1px solid #1e3f70;
-  }
-
-  .top-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-
-  .logo-wrap {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .logo-icon {
-    width: 32px; height: 32px;
-    background: #1a3f7a;
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-  }
-
-  .logo-icon svg { width: 18px; height: 18px; }
-
-  .logo-text {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    color: #ffffff;
-    letter-spacing: 0.3px;
-  }
-
-  .live-badge {
-    background: #0f2d55;
-    border: 1px solid #2a5fa0;
-    border-radius: 20px;
-    padding: 4px 12px;
-    font-size: 11px;
-    color: #5bc4f5;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .live-dot {
-    width: 6px; height: 6px;
-    background: #5bc4f5;
-    border-radius: 50%;
-    animation: pulse 1.5s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  .platform-label {
-    font-size: 9px;
-    color: #5bc4f5;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-
-  .headline {
-    font-family: 'Sora', sans-serif;
-    font-size: 30px;
-    font-weight: 800;
-    line-height: 1.15;
-    color: #ffffff;
-    margin-bottom: 16px;
-  }
-
-  .divider {
-    border: none;
-    border-top: 1px solid #1e3f70;
-    margin-bottom: 14px;
-  }
-
-  .desc {
-    font-size: 12.5px;
-    color: #ffffff;
-    line-height: 1.7;
-    margin-bottom: 18px;
-  }
-
-  .section-label {
-    font-size: 9px;
-    color: #5bc4f5;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-
-  .benefits { display: flex; flex-direction: column; gap: 9px; margin-bottom: 22px; }
-
-  .benefit {
-    background: #081729;
-    border: 1px solid #1a3a6a;
-    border-radius: 10px;
-    padding: 11px 12px;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .benefit-num {
-    background: #1a3f7a;
-    color: #5bc4f5;
-    border-radius: 50%;
-    width: 22px; height: 22px;
-    min-width: 22px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px;
-    font-weight: 700;
-    font-family: 'Sora', sans-serif;
-  }
-
-  .benefit-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 3px;
-    font-family: 'Sora', sans-serif;
-  }
-
-  .benefit-desc {
-    font-size: 11.5px;
-    color: #ffffff;
-    line-height: 1.55;
-  }
-
-  .bottom-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 12px;
-  }
-
-  .stats { display: flex; flex-direction: column; gap: 11px; }
-
-  .stat-val {
-    font-family: 'Sora', sans-serif;
-    font-size: 26px;
-    font-weight: 800;
-    color: #5bc4f5;
-    line-height: 1;
-  }
-
-  .stat-lbl {
-    font-size: 9px;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 2px;
-  }
-
-  .partners {
-    font-size: 9px;
-    color: #3a6090;
-    margin-top: 6px;
-    line-height: 1.6;
-  }
-
-  .qr-wrap {
+    background: #d0cdc8;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 32px;
+    padding: 36px 16px;
+    min-height: 100vh;
   }
-
-  .qr-wrap a {
-    display: block;
-    background: white;
-    padding: 8px;
-    border-radius: 10px;
-    line-height: 0;
+  .page-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: #777; margin-bottom: -24px;
   }
-
-  .qr-wrap img {
-    width: 88px;
-    height: 88px;
-    display: block;
+  .card {
+    background: linear-gradient(160deg, #0d2247 0%, #091830 100%);
+    border-radius: 20px; width: 360px;
+    padding: 28px 24px 24px;
+    color: white; border: 1px solid #1e3f70;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.28);
   }
+  .top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .logo-wrap { display: flex; align-items: center; gap: 8px; }
+  .logo-icon { width: 32px; height: 32px; background: #1a3f7a; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .logo-icon svg { width: 18px; height: 18px; }
+  .logo-text { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px; color: #fff; letter-spacing: 0.3px; }
+  .top-badge { background: #0f2d55; border: 1px solid #2a5fa0; border-radius: 20px; padding: 4px 12px; font-size: 10px; color: #5bc4f5; font-weight: 600; letter-spacing: 0.5px; }
+  .platform-label { font-size: 9px; color: #5bc4f5; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; font-weight: 600; }
+  .headline { font-family: 'Sora', sans-serif; font-size: 30px; font-weight: 800; line-height: 1.15; color: #fff; margin-bottom: 16px; }
+  .divider { border: none; border-top: 1px solid #1e3f70; margin-bottom: 14px; }
+  .desc { font-size: 12.5px; color: #c8ddf0; line-height: 1.7; margin-bottom: 18px; }
+  .section-label { font-size: 9px; color: #5bc4f5; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+  .benefits { display: flex; flex-direction: column; gap: 9px; margin-bottom: 22px; }
+  .benefit { background: #081729; border: 1px solid #1a3a6a; border-radius: 10px; padding: 11px 12px; display: flex; gap: 10px; align-items: flex-start; }
+  .benefit-num { background: #1a3f7a; color: #5bc4f5; border-radius: 50%; width: 22px; height: 22px; min-width: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; font-family: 'Sora', sans-serif; }
+  .benefit-title { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 3px; font-family: 'Sora', sans-serif; }
+  .benefit-desc { font-size: 11.5px; color: #c8ddf0; line-height: 1.55; }
+  .bottom-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+  .stats { display: flex; flex-direction: column; gap: 11px; }
+  .stat-val { font-family: 'Sora', sans-serif; font-size: 26px; font-weight: 800; color: #5bc4f5; line-height: 1; }
+  .stat-lbl { font-size: 9px; color: #c8ddf0; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+  .qr-wrap { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .qr-box { background: white; padding: 8px; border-radius: 10px; line-height: 0; display: block; }
+  .qr-box img { width: 88px; height: 88px; display: block; }
+  .qr-label { font-size: 9px; color: #5bc4f5; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 600; text-align: center; }
+  .qr-url { font-size: 8px; color: #6a90b8; text-align: center; line-height: 1.4; }
+  .founder-row { border-top: 1px solid #1a3a6a; margin-top: 20px; padding-top: 14px; display: flex; align-items: center; gap: 12px; }
+  .founder-icon { width: 38px; height: 38px; background: #1a3f7a; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .founder-icon span { font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; color: #5bc4f5; }
+  .founder-name { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; color: #fff; }
+  .founder-role { font-size: 10px; color: #5bc4f5; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 2px; }
+  .founder-email { font-size: 10px; color: #c8ddf0; }
 
-  .qr-label {
-    font-size: 9px;
-    color: #5bc4f5;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    font-weight: 600;
-    text-align: center;
-  }
-
-  .qr-url {
-    font-size: 8px;
-    color: #3a6090;
-    text-align: center;
-    line-height: 1.4;
+  /* BACK */
+  .slabel { font-size: 9px; color: #5bc4f5; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+  .ask-block { background: #081729; border: 1px solid #1a3a6a; border-radius: 12px; padding: 18px 16px; text-align: center; margin-bottom: 16px; }
+  .ask-round { font-size: 9px; color: #6a90b8; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 1px; }
+  .ask-amount { font-family: 'Sora', sans-serif; font-size: 36px; font-weight: 800; color: #5bc4f5; line-height: 1; }
+  .ask-sub { font-size: 10px; color: #c8ddf0; margin-top: 4px; margin-bottom: 14px; }
+  .milestones { display: flex; gap: 6px; }
+  .ms-item { flex: 1; background: #0d2247; border: 1px solid #1e3f70; border-radius: 8px; padding: 9px 4px; text-align: center; }
+  .ms-num { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 800; color: #fff; display: block; }
+  .ms-lbl { font-size: 7.5px; color: #6a90b8; margin-top: 2px; display: block; line-height: 1.3; }
+  .funds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .fc { background: #081729; border: 1px solid #1a3a6a; border-radius: 10px; padding: 12px; border-left: 3px solid #5bc4f5; }
+  .fc-pct { font-family: 'Sora', sans-serif; font-size: 22px; font-weight: 800; color: #5bc4f5; }
+  .fc-name { font-size: 10px; font-weight: 600; color: #fff; margin: 2px 0; font-family: 'Sora', sans-serif; }
+  .fc-amt { font-size: 9px; color: #6a90b8; }
+  .runway { background: #081729; border: 1px solid #1a3a6a; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; margin-bottom: 16px; }
+  .rw-item { text-align: center; }
+  .rw-val { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; color: #fff; display: block; }
+  .rw-lbl { font-size: 8px; color: #6a90b8; display: block; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .rw-div { width: 1px; height: 24px; background: #1e3f70; }
+  .traction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+  .tc-item { background: #081729; border: 1px solid #1a3a6a; border-radius: 10px; padding: 10px; text-align: center; }
+  .tc-num { font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 800; color: #5bc4f5; display: block; }
+  .tc-lbl { font-size: 8px; color: #6a90b8; margin-top: 2px; display: block; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.5px; }
+  .print-note { font-size: 10px; color: #777; text-align: center; background: #fff; border-radius: 8px; padding: 10px 16px; border: 1px dashed #ccc; width: 360px; }
+  @media print {
+    body { background: white; gap: 0; padding: 0; }
+    .page-label, .print-note { display: none; }
+    .card { box-shadow: none; border-radius: 0; page-break-after: always; }
   }
 </style>
 </head>
 <body>
-<div class="card">
 
+<div class="page-label">Front Page</div>
+
+<div class="card">
   <div class="top-bar">
     <div class="logo-wrap">
       <div class="logo-icon">
@@ -249,82 +109,119 @@
       </div>
       <span class="logo-text">DigiSlip</span>
     </div>
-
   </div>
-
   <div class="platform-label">WhatsApp Receipt Platform</div>
-
   <h1 class="headline">Receipts That<br>Go Paperless.</h1>
-
   <hr class="divider">
-
-  <p class="desc">
-    DigiSlip replaces paper receipts with instant WhatsApp delivery plugging directly into your existing POS with zero hardware changes and no app required. Pakistan's first digital receipt infrastructure bridges merchants, customers, and FBR compliance in under 2 seconds.
-  </p>
-
+  <p class="desc">DigiSlip replaces paper receipts with instant WhatsApp delivery plugging directly into your existing POS with zero hardware changes and no app required. Pakistan's first digital receipt infrastructure bridges merchants, customers, and FBR compliance in under 2 seconds.</p>
   <div class="section-label">Key Benefits</div>
-
   <div class="benefits">
     <div class="benefit">
       <div class="benefit-num">1</div>
-      <div>
-        <div class="benefit-title">Zero friction setup</div>
-        <div class="benefit-desc">Software-only install. No hardware replacement, no app download for customers.</div>
-      </div>
+      <div><div class="benefit-title">Zero friction setup</div><div class="benefit-desc">Software-only install. No hardware replacement, no app download for customers.</div></div>
     </div>
     <div class="benefit">
       <div class="benefit-num">2</div>
-      <div>
-        <div class="benefit-title">Built-in loyalty and analytics</div>
-        <div class="benefit-desc">Every receipt auto-credits loyalty points and feeds a real-time merchant dashboard.</div>
-      </div>
+      <div><div class="benefit-title">Built-in loyalty and analytics</div><div class="benefit-desc">Every receipt auto-credits loyalty points and feeds a real-time merchant dashboard.</div></div>
     </div>
     <div class="benefit">
       <div class="benefit-num">3</div>
-      <div>
-        <div class="benefit-title">FBR ready and cost saving</div>
-        <div class="benefit-desc">Fully FBR compliant at PKR 1,500/month less than thermal paper rolls today.</div>
-      </div>
+      <div><div class="benefit-title">FBR ready and cost saving</div><div class="benefit-desc">Fully FBR compliant at PKR 1,500/month less than thermal paper rolls today.</div></div>
     </div>
   </div>
-
   <div class="bottom-row">
     <div class="stats">
-      <div>
-        <div class="stat-val">4.2M</div>
-        <div class="stat-lbl">Businesses in Pakistan</div>
-      </div>
-      <div>
-        <div class="stat-val">$180M+</div>
-        <div class="stat-lbl">Market Opportunity</div>
-      </div>
-      <div>
-        <div class="stat-val">&lt;2s</div>
-        <div class="stat-lbl">Slip Delivery Time</div>
-      </div>
-
+      <div><div class="stat-val">4.2M</div><div class="stat-lbl">Businesses in Pakistan</div></div>
+      <div><div class="stat-val">80M+</div><div class="stat-lbl">Market Opportunity</div></div>
+      <div><div class="stat-val">&lt;2s</div><div class="stat-lbl">Slip Delivery Time</div></div>
     </div>
-
     <div class="qr-wrap">
-      <a href="https://digislipdemo-production-5d1a.up.railway.app/" target="_blank">
-        <img src="data:image/png;base64,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" alt="Scan to visit DigiSlip demo">
+      <a href="https://digislipdemo-production-5d1a.up.railway.app/" target="_blank" class="qr-box">
+        <img src="data:image/png;base64,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" alt="Scan to visit DigiSlip">
       </a>
       <div class="qr-label">Scan to Experience</div>
-      <div class="qr-url">digislipdemo-production<br>.up.railway.app</div>
+      <div class="qr-url">digislipdemo-production-5d1a<br>.up.railway.app</div>
     </div>
   </div>
-
-  <div style="border-top: 1px solid #1a3a6a; margin-top: 20px; padding-top: 14px; display: flex; align-items: center; gap: 12px;">
-    <div style="width: 38px; height: 38px; background: #1a3f7a; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-      <span style="font-family:'Sora',sans-serif; font-size: 14px; font-weight: 700; color: #5bc4f5;">HB</span>
-    </div>
+  <div class="founder-row">
+    <div class="founder-icon"><span>HB</span></div>
     <div>
-      <div style="font-family:'Sora',sans-serif; font-size: 13px; font-weight: 700; color: #ffffff;">Humaira Bibi</div>
-      <div style="font-size: 10px; color: #5bc4f5; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 2px;">Founder & CEO</div>
-      <div style="font-size: 10px; color: #ffffff;">humairabaksh38@gmail.com</div>
+      <div class="founder-name">Humaira Bibi</div>
+      <div class="founder-role">Founder & CEO</div>
+      <div class="founder-email">humairabaksh38@gmail.com</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-label">Back Page</div>
+
+<div class="card">
+  <div class="top-bar">
+    <div class="logo-wrap">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#5bc4f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="9" y1="13" x2="15" y2="13"/>
+          <line x1="9" y1="17" x2="13" y2="17"/>
+        </svg>
+      </div>
+      <span class="logo-text">DigiSlip</span>
+    </div>
+    <div class="top-badge">Investor Brief</div>
+  </div>
+
+  <div class="slabel">The Ask</div>
+  <div class="ask-block">
+    <div class="ask-round">Seed Round</div>
+    <div class="ask-amount">PKR 15M</div>
+    <div class="ask-sub">With this round we will achieve:</div>
+    <div class="milestones">
+      <div class="ms-item"><span class="ms-num">500</span><span class="ms-lbl">Merchants Live</span></div>
+      <div class="ms-item"><span class="ms-num">PKR 750K</span><span class="ms-lbl">Monthly MRR</span></div>
+      <div class="ms-item"><span class="ms-num">3 Cities</span><span class="ms-lbl">KHI · LHR · ISB</span></div>
     </div>
   </div>
 
+  <div class="slabel">Use of Funds</div>
+  <div class="funds-grid">
+    <div class="fc"><div class="fc-pct">30%</div><div class="fc-name">Tech & Product</div><div class="fc-amt">PKR 4.5M</div></div>
+    <div class="fc"><div class="fc-pct">27%</div><div class="fc-name">Sales & Marketing</div><div class="fc-amt">PKR 4M</div></div>
+    <div class="fc"><div class="fc-pct">33%</div><div class="fc-name">Operations</div><div class="fc-amt">PKR 5M</div></div>
+    <div class="fc"><div class="fc-pct">10%</div><div class="fc-name">Legal & Compliance</div><div class="fc-amt">PKR 1.5M</div></div>
+  </div>
+
+  <div class="runway">
+    <div class="rw-item"><span class="rw-val">18 Months</span><span class="rw-lbl">Runway</span></div>
+    <div class="rw-div"></div>
+    <div class="rw-item"><span class="rw-val">Month 14</span><span class="rw-lbl">Break-even</span></div>
+    <div class="rw-div"></div>
+    <div class="rw-item"><span class="rw-val">21.6x</span><span class="rw-lbl">LTV:CAC Ratio</span></div>
+  </div>
+
+  <div class="slabel">Market Traction</div>
+  <div class="traction-grid">
+    <div class="tc-item"><span class="tc-num">4.2M</span><span class="tc-lbl">Businesses in Pakistan</span></div>
+    <div class="tc-item"><span class="tc-num">80M+</span><span class="tc-lbl">Market Opportunity</span></div>
+    <div class="tc-item"><span class="tc-num">&lt;2s</span><span class="tc-lbl">Receipt Delivery</span></div>
+    <div class="tc-item"><span class="tc-num">PKR 1,500</span><span class="tc-lbl">Savings vs Paper/Month</span></div>
+  </div>
+
+  <div class="founder-row">
+    <div class="founder-icon"><span>HB</span></div>
+    <div>
+      <div class="founder-name">Humaira Bibi</div>
+      <div class="founder-role">Founder & CEO</div>
+      <div class="founder-email">humairabaksh38@gmail.com</div>
+    </div>
+    <div style="margin-left:auto;text-align:right;">
+      <div style="font-size:8px;color:#6a90b8;line-height:1.7;text-transform:uppercase;letter-spacing:0.5px;">Pakistan's First<br>Digital Receipt<br>Infrastructure</div>
+    </div>
+  </div>
 </div>
+
+<div class="print-note">
+</div>
+
 </body>
 </html>
